@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        label, input{
+            font-size: larger;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>HTML Forms</h1>
+        <form action="" method="get">
+            <div>
+                <label for="">Name</label>
+                <input type="text" name="name" required minlength="2" maxlength="50">
+            </div>
+            <br>
+            <div>
+                <label for="">Date Of Birth</label>
+                <input type="date" name="dob" required>
+            </div>
+            <br>
+            <div>
+                <label for="">Phone No</label>
+                <input type="tel" name="phone" pattern="[0-9]{10}">
+            </div>
+            <br>
+            <div>
+                <label for="">Salary</label>
+                <input type="number" name="salary" min="1000" max="5000000">
+            </div>
+            <br>
+            <div>
+                <label for="">E-Mail</label>
+                <input type="email" name="email" required>
+            </div>
+            <br>
+            <div>
+                <label for="">Gender:</label>
+                
+                <input type="radio" value="male" name="gender">
+                <label for="">Male</label>
+               
+                <input type="radio" value="female" name="gender">
+                <label for="">Female</label>
+            </div>
+            <br>
+            <div>
+                <label for="">Time</label>
+                <input type="time" name="time">
+            </div>
+            <br>
+            <div>
+                <label for="">Datetime</label>
+                <input type="datetime-local" name="datetime">
+            </div>
+            <br>
+            <div>
+                <label for="">Department</label>
+                <select name="dept" id="dept">
+                    <option value="CS">CS</option>
+                    <option value="EC">EC</option>
+                    <option value="AI">AI</option>
+                    <option value="AR">AR</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <input type="checkbox" name="agree" required>
+                <label for="">Agree T & C</label>
+            </div>
+            <br>
+            <div>
+                <button type="submit">click here</button>
+            </div>
+        </form>
+    </section>
+</body>
+</html>

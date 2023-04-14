@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4</title>
+</head>
+<body>
+    <!-- Write an HTML page including javascript that takes a given set of integer numbers and shows them after sorting in descending order -->
+    <section>
+        <h2>Lab 4: HTML and Javascript</h2>
+        <form>
+            <div>
+                <label for="userInput">Enter Numbers (separated by comma): </label>
+            <input type="text" id="userInput">
+            </div>
+            <button type="button" onclick="sortNumbers()">Sort Numbers</button>
+        </form>
+        <h3>Sorted Numbers</h3>
+        <h4 id="result"></h4>
+    </section>
+    <script>
+        function sortNumbers(){
+            let numbers = document.getElementById('userInput').value;
+            console.log(numbers);
+
+            let nums = numbers.split(',');
+            console.log(nums);
+
+            let num_array = [];
+            nums.forEach(element => {
+                num_array.push(Number(element.trim()))
+            });
+            console.log(num_array);
+            
+            sortedArray = num_array.sort().reverse();
+            console.log(sortedArray);
+            document.getElementById('result').innerText = sortedArray.join(', ');
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 9</title>
+    <style>
+        body {
+            background-color: aliceblue;
+        }
+
+        input {
+            width: 20rem;
+            margin: 0 2rem;
+        }
+
+        .btn {
+            color: blue;
+            background-color: aliceblue;
+            border: 1px solid blue;
+            border-radius: 2px;
+            font-size: 1rem;
+        }
+
+        th,
+        tr,
+        td {
+            border: 1px solid black;
+            padding: 1rem;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!--  Write a program that takes user id as input and displays the user details by taking the user information from the XML document. -->
+    <section>
+        <h1>User Details</h1>
+        <form action="#">
+            <div>
+                <label for="userId">Enter User ID: </label>
+                <input name="userId" id="userId" type="number" min="1" max="1000"
+                    placeholder="Please enter user id here">
+            </div>
+            <br>
+            <div>
+                <button class="btn" type="button" onclick="loadXMLDoc()">Fetch Details</button>
+            </div>
+        </form>
+    </section>
+    <br><br>
+    <section>
+        <table id="result"></table>
+    </section>
+    <script>
+        function loadXMLDoc() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+
+                // Request finished and response 
+                // is ready and Status is "OK"
+                if (this.readyState == 4 && this.status == 200) {
+                    userDetails(this);
+                }
+            };
+
+            // employee.xml is the external xml file
+            xmlhttp.open("GET", "users.xml", true);
+            xmlhttp.send();
+        }
+
+        function userDetails(xml) {
+            var i;
+            var xmlDoc = xml.responseXML;
+            var table =
+                `<tr><th>Id</th><th>Name</th>
+                    <th>Email</th><th>Phone</th>
+                    <th>City</th>
+                </tr>`;
+            var x = xmlDoc.getElementsByTagName("user");
+
+            let userId = document.getElementById('userId').value;
+            // alert(userId);
+            let found = false;
+            for (i = 0; i < x.length; i++) {
+                if (x[i].getElementsByTagName("id")[0]
+                    .childNodes[0].nodeValue == userId) {
+                    found = true;
+                    table += "<tr><td>" +
+                        x[i].getElementsByTagName("id")[0]
+                            .childNodes[0].nodeValue + "</td><td>" +
+                        x[i].getElementsByTagName("name")[0]
+                            .childNodes[0].nodeValue + "</td><td>" +
+                        x[i].getElementsByTagName("email")[0]
+                            .childNodes[0].nodeValue + "</td><td>" +
+                        x[i].getElementsByTagName("phone")[0]
+                            .childNodes[0].nodeValue + "</td><td>" +
+                        x[i].getElementsByTagName("city")[0]
+                            .childNodes[0].nodeValue + "</td>";
+                }
+            }
+
+            if (!found) {
+                alert('No record found with such user id');
+            }
+            else {
+                // Print the xml data in table form
+                document.getElementById("result").innerHTML = table;
+            };
+        }
+
+        function clearResult() {
+            document.getElementById("result").innerHTML = '';
+        }
+    </script>
+</body>
+
+</html>

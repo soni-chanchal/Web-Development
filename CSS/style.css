@@ -1,0 +1,52 @@
+/* text colors */
+.text-success{
+    color: green;
+}
+.text-danger{
+    color:red;
+}
+.fs-large{
+    font-size: 2.5rem;
+}
+/* background colors*/
+.bg-primary{
+    background-color: aquamarine;
+}
+.bg-secondary{
+    background-color: aqua;
+}
+.fw-bold{
+    font-weight: bold;
+}
+.fw-bolder{
+    font-weight: lighter;
+}
+
+.btn-primary{
+    background-color: rgb(150, 205, 239);
+    color: rgb(6, 6, 6);
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    size: 2.5rem;
+}
+
+.btn-danger{
+    background-color: rgb(143, 139, 139);
+    color: #000000;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.m-1, .p-1{
+    margin: 1rem;
+}
+.border-dotted{
+    border-style: dotted;
+    border-color: rgb(124, 124, 189);
+    margin: 20px;
+    padding: 20px;
+    background-color: burlywood;
+
+}

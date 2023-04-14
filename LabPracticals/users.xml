@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+    <user>
+        <id>1</id>
+        <name>Chanchal Soni</name>
+        <email>chanchal@gmail.com</email>
+        <phone>9876543210</phone>
+        <city>Agra</city>
+    </user>
+    <user>
+        <id>2</id>
+        <name>Garima</name>
+        <email>garima@gmail.com</email>
+        <phone>9876113210</phone>
+        <city>Delhi</city>
+    </user>
+    <user>
+        <id>3</id>
+        <name>Dolly</name>
+        <email>dolly@gmail.com</email>
+        <phone>9811543210</phone>
+        <city>Noida</city>
+    </user>
+    <user>
+        <id>4</id>
+        <name>Vanshika</name>
+        <email>vanshika@gmail.com</email>
+        <phone>9833543210</phone>
+        <city>Meerut</city>
+    </user>
+    <user>
+        <id>5</id>
+        <name>Silky </name>
+        <email>silky@gmail.com</email>
+        <phone>9786543210</phone>
+        <city>Gzb</city>
+    </user>
+</users>
